@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torch.distributions import Categorical
-
+import random
 #Hyperparameters
 learning_rate = 0.0002
 gamma         = 0.98
@@ -14,7 +14,6 @@ class ActorCritic(nn.Module):
     def __init__(self):
         super(ActorCritic, self).__init__()
         self.data = []
-        
         self.fc1 = nn.Linear(4,256)
         self.fc_pi = nn.Linear(256,2)
         self.fc_v = nn.Linear(256,1)

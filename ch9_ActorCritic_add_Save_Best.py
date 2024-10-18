@@ -5,11 +5,11 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torch.distributions import Categorical
 import os
+import random
 #Hyperparameters
 learning_rate = 0.0002
 gamma         = 0.98
 n_rollout     = 10
-
 class ActorCritic(nn.Module):
     def __init__(self):
         super(ActorCritic, self).__init__()
@@ -65,6 +65,7 @@ class ActorCritic(nn.Module):
         self.optimizer.step()         
       
 def main():  
+    random.seed(2024)
     env = gym.make('CartPole-v1')
     model = ActorCritic()    
     print_interval = 20

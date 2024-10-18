@@ -5,6 +5,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torch.distributions import Categorical
 import os
+import random
 #Hyperparameters
 learning_rate = 0.0002
 gamma         = 0.98
@@ -36,6 +37,7 @@ class Policy(nn.Module):
         self.data = []
 
 def main():
+    random.seed(2024)
     env = gym.make('CartPole-v1')
     pi = Policy()
     score = 0.0
