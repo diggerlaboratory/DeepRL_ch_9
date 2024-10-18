@@ -5,7 +5,7 @@ from torch.distributions import Categorical
 if __name__=="__main__":
     env = gym.make('CartPole-v1')
     pi = Policy()
-    pi.load_state_dict(torch.load("/home/ssu20/rlDir/policy/Reinforce/Reinforce_BestModel_epi_03820_1333.65.pth"))
+    pi.load_state_dict(torch.load("./policy/Reinforce/Reinforce_BestModel_epi_03820_1333.65.pth"))
     s, _ = env.reset()
     done = False
     while not done: # CartPole-v1 forced to terminates at 500 step.
