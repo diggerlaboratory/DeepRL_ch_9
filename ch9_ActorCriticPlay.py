@@ -3,10 +3,10 @@ import gym
 import torch
 from torch.distributions import Categorical
 if __name__=="__main__":
-    env = gym.make('CartPole-v1')
+    env = gym.make('CartPole-v1',render_mode='human')
     model = ActorCritic()
     # model.load_state_dict(torch.load("/home/ssu20/rlDir/policy/ActorCritic/ActriCritic_BestModel_epi_00020_21.35.pth"))
-    model.load_state_dict(torch.load("./policy/ActorCritic/ActriCritic_BestModel_epi_01780_1497.35.pth"))
+    model.load_state_dict(torch.load("policy/ActorCritic/ActriCritic_BestModel_epi_01960_1794.25.pth"))
     done = False
     s, _ = env.reset()
     score = 0
